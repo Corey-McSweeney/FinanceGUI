@@ -33,6 +33,7 @@ class FinanceGUI:
         submit_button = Button(add_window, command=self.on_submit_click, text="Add", bg="blue", fg="white")
         submit_button.pack(anchor=CENTER)
 
+
     def main(self):
         root = Tk()
 
@@ -61,6 +62,10 @@ class FinanceGUI:
         #input field
         income_input = Entry(income_frame)
         income_input.grid(row=1, column=1)
+        #variables
+        income_value = income_input.get()
+        remaining_value = income_value
+
 
         #Allocation frame
         allocation_frame = Frame(root)
@@ -77,6 +82,7 @@ class FinanceGUI:
         #label
         remaining_label = Label(remaining_frame, text="Remaining:", justify=CENTER)
         remaining_label.grid(row=0, column=0)
+        remaining_text = Label(remaining_frame, text=remaining_value, justify=CENTER)
 
 
         # Close main loop
