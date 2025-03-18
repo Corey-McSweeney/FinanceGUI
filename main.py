@@ -15,7 +15,7 @@ class FinanceGUI:
         #Create Top Level
         add_window = Toplevel()
         add_window.title("Add Money Allocation")
-        add_window.geometry("1000x500")
+        add_window.geometry("800x400")
 
         #Create input fields
         #Title
@@ -43,6 +43,7 @@ class FinanceGUI:
     def on_save_click(self, income_input):
         self.income_value = float(income_input.get())
         self.remaining_value = self.income_value
+        self.remaining_text.config(text=str(self.remaining_value))
         print(f"Income set to: {self.income_value}")
         print(f"Remaining value: {self.remaining_value}")
 
@@ -52,7 +53,7 @@ class FinanceGUI:
 
         # Window properties
         root.title("Finance GUI")
-        root.minsize(1700, 900)
+        root.minsize(1000,500)
 
         # Frames
         #Income frame
@@ -98,8 +99,8 @@ class FinanceGUI:
         #label
         remaining_label = Label(remaining_frame, text="Remaining:", justify=CENTER)
         remaining_label.grid(row=0, column=0)
-        remaining_text = Label(remaining_frame, text=str(self.remaining_value), justify=CENTER)
-        remaining_text.grid(row=1, column=1)
+        self.remaining_text = Label(remaining_frame, text=str(self.remaining_value), justify=CENTER)
+        self.remaining_text.grid(row=1, column=1)
 
 
         # Close main loop
