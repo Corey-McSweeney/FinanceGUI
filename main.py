@@ -38,7 +38,11 @@ class FinanceGUI:
 
         #Submit button
         submit_button = Button(add_window, command=self.on_submit_click, text="Add", bg="blue", fg="white")
-        submit_button.pack(anchor=CENTER)
+        submit_button.pack(anchor=CENTER, pady=10)
+
+        #Cancel button
+        cancel_button = Button(add_window, text="Cancel", bg="red", fg="black")
+        cancel_button.pack(anchor=CENTER)
     
     def on_save_click(self, income_input):
         self.income_value = float(income_input.get())
